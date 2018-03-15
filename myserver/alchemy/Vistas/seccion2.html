@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Juego Mágico de Química</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<style type="text/css">
+  		html, body {
+  			height: 100%;
+  			margin: 0;
+  			padding: 0;
+  		}
+
+  		.contenedor{
+				height: 100%;
+  			display: table;
+  			width: 100%;
+				margin-left: auto;
+			  margin-right: auto;
+
+		}
+
+		.elemens{
+			height: auto;
+			width: 30%;
+			border-right: 1px solid #FFEABE;
+			background-color: #1E1F3D;
+
+		}
+
+		.mixspace{
+			height: auto;
+			width: 70%;
+			background-color: #1E1F3D;
+		}
+
+		.row{
+			height: 100%;
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		h1 {
+			font-size: 2em;
+			font-family: 'Pacifico', cursive;
+			padding: 5px 10px;;
+			color: #FFEABE;
+		}
+
+		#F_Ex{
+			display: block;
+			margin-top: 3px;
+			margin-left: auto;
+    	margin-right: auto;
+
+		}
+
+		#Button{
+			position: absolute;
+    bottom: 8px;
+    left: 16px;
+    font-size: 18px;
+		}
+  	</style>
+
+</head>
+<body class="contenedor">
+	<div class="contenedor">
+  <div class="row">
+    <div class="elemens">
+      <h1 id="titulo">Elementos quimicos</h1>
+			<img id= "F_Ex"src="images/Hidrogeno.png" style="width:25%;" alt=Hidrogeno >
+			<button id = "Button" type="button" class="btn btn-outline-primary">Almacen</button>
+    </div>
+    <div class="mixspace">
+      <h1 id="titulo">Area de trabajo</h1>
+    </div>
+
+  </div>
+</div>
+</body>
