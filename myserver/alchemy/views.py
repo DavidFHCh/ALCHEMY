@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import TemplateView
 
-def index(request):
-    return HttpResponse("In the future this will be a beautiful site.")
+class Index(TemplateView):
+    def get(self, request, **kwargs):
+        return render(request, 'alchemy/index.html', context=None)
 
 # Create your views here.
