@@ -55,7 +55,8 @@
 	<div class="container">
 
 		<div class="row">
-			<img src="images/logo.jpg" class="img-fluid img-circle center-block" alt="" width="304" height="236">
+			 {% load staticfiles %}
+			<img src="{% static "alchemy/logo.jpg" %}" class="img-fluid img-circle center-block" alt="" width="304" height="236">
 			<h1 class="text-center">Juego Mágico de Química</h1>
 			<button type="submit" class="btn btn-primary btn-block center-block">Ir al laboratorio</button>
 			<button type="submit" class="btn btn-primary btn-block center-block">Ir al almacen</button>
