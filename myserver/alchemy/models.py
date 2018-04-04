@@ -28,3 +28,6 @@ class Elementos(models.Model):
     def Ruta_Tarjeta(self):
         cadena = "{0}"
         return cadena.format(self.Foto_Tarjeta)
+
+    def __str__(self):
+        return self.Nombre_Elemento
