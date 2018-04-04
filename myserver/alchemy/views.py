@@ -3,14 +3,20 @@ from django.views.generic import TemplateView
 from django.utils import timezone
 from .models import Elementos
 
-def Index(request):
-    elementos_list= Elementos.objects.all()
-    return render(request, 'alchemy/index.html', {'elementos_list' : elementos_list})
+class Index(TemplateView):
 
-def Mezclar(request):
-    return render(request, 'alchemy/mezclar.html', {})
+    def get(self, request, **kwargs):
+        elementos_list= Elementos.objects.all()
+        return render(request, 'alchemy/index.html', {'elementos_list' : elementos_list})
 
-def Almacen(request):
-    return render(request, 'alchemy/almacen.html', {})
+class Mezclar(TemplateView):
+
+    def get(self, request, **kwargs):
+        return render(request, 'alchemy/mezclar.html', {})
+
+class Almacen(TemplateView):
+
+    def get(self, request, **kwargs):
+        return render(request, 'alchemy/almacen.html', {})
 
 # Create your views here.

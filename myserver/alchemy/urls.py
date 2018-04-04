@@ -3,7 +3,7 @@ from django.urls import path
 from alchemy import views
 
 urlpatterns = [
-        url(r'^$', views.Index),
-        url(r'^mezclar/$', views.Mezclar, name = 'Mezclar'),
-        url(r'^almacen/$', views.Almacen, name = 'ALmacen')
+        url(r'^$', views.Index.as_view()),
+        url(r'^mezclar/', views.Mezclar.as_view()),
+        url(r'^almacen/', views.Almacen.as_view())
     ]
