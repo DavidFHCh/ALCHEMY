@@ -13,7 +13,7 @@
   		html, body {
   			height: 100%;
   			margin: 0;
-  			padding: 0
+  			padding: 0;
   		}
 
   		.container {
@@ -58,12 +58,11 @@
 			 {% load staticfiles %}
 			<img src="{% static "alchemy/logo.jpg" %}" class="img-fluid img-circle center-block" alt="" width="304" height="236">
 			<h1 class="text-center">Juego Mágico de Química</h1>
-			<button type="submit" class="btn btn-primary btn-block center-block">Ir al laboratorio</button>
+			<button href = "{% url 'Mezclar' %} "type="submit" class="btn btn-primary btn-block center-block">Ir al laboratorio</button>
 			<button type="submit" class="btn btn-primary btn-block center-block">Ir al almacen</button>
-			<h1> Quimicos </h1>
-			<ul>
-  			{% for elementos in object_list%} <li class = "contacto" > {{contacto}} </ li> 
-  			{% endfor%} </ ul>
+			{% for e in elementos_list %}
+				{{e.Simbolo_Elemento}}
+			{% endfor %}
 		</div>
 
 
