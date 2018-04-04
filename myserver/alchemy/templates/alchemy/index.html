@@ -60,6 +60,7 @@
 			<h1 class="text-center">Juego Mágico de Química</h1>
 			<button href = "{% url 'Mezclar' %} "type="submit" class="btn btn-primary btn-block center-block">Ir al laboratorio</button>
 			<button type="submit" class="btn btn-primary btn-block center-block">Ir al almacen</button>
+			<a href="{% url 'Mezclar' %}">Aprieta</a>
 			{% for e in elementos_list %}
 				{{e.Simbolo_Elemento}}
 			{% endfor %}

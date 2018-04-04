@@ -10,5 +10,7 @@ def Index(request):
 def Mezclar(request):
     return render(request, 'alchemy/mezclar.html', {})
 
+def Almacen(request):
+    return render(request, 'alchemy/almacen.html', {})
 
 # Create your views here.

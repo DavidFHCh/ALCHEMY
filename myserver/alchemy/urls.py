@@ -4,5 +4,6 @@ from alchemy import views
 
 urlpatterns = [
         url(r'^$', views.Index),
-        url(r'^mezclar/$', views.Mezclar, name = 'Mezclar')
+        url(r'^mezclar/$', views.Mezclar, name = 'Mezclar'),
+        url(r'^almacen/$', views.Almacen, name = 'ALmacen')
     ]
