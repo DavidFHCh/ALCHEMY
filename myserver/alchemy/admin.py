@@ -4,3 +4,4 @@ from alchemy.models import *
 
 
 admin.site.register(Elementos)
+admin.site.register(Mezclas)

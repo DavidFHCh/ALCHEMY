@@ -31,3 +31,28 @@ class Elementos(models.Model):
 
     def __str__(self):
         return self.Nombre_Elemento
+
+class Mezclas(models.Model):
+    Nombre_Mezcla = models.CharField(max_length = 35)
+    Elemento1 = models.CharField(max_length = 35)
+    Elemento2 = models.CharField(max_length = 35)
+    Foto_Mezcla = models.CharField(max_length = 35)
+
+    def Nombre(self):
+        cadena = "{0}"
+        return cadena.format(self.Nombre_Mezcla)
+
+    def Elem1(self):
+        cadena = "{0}"
+        return cadena.format(self.Elemento1)
+
+    def Elem2(self):
+        cadena = "{0}"
+        return cadena.format(self.Elemento2)
+
+    def Foto(self):
+        cadena = "{0}"
+        return cadena.format(self.Foto_Mezcla)
+
+    def __str__(self):
+        return self.Nombre_Mezcla
