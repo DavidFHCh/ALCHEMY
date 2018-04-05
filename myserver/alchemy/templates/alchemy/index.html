@@ -39,7 +39,7 @@
 
   		.btn-block {
   			width: 40%;
-        
+
   		}
 
   		.btn-primary {
@@ -49,6 +49,21 @@
   			color: #1e1f3d;
   			font-size: 1.2em;
   		}
+
+			#botonIndex{
+				width: 50%;
+				height: 30%;
+			}
+
+			#imagen{
+				width: auto;
+				height: 30%;
+			}
+
+			#texto{
+				width: auto;
+				height: auto;
+			}
   	</style>
 
 </head>
@@ -57,22 +72,17 @@
 
 		<div class="row">
 			 {% load staticfiles %}
-			<img src="{% static "alchemy/logo.jpg" %}" class="img-fluid img-circle center-block" alt="" width="304" height="236">
-			<h1 class="text-center">Juego Mágico de Química</h1>
+			<img id = "imagen" src="{% static "alchemy/logo.jpg" %}" class="img-fluid img-circle center-block">
+			<h1 id= "texto"class="text-center">Juego Mágico de Química</h1>
 
 			<form action='/mezclar'>
-			<button type="submit" class="btn btn-primary btn-block center-block">Ir al laboratorio</button>
+			<button id = "botonIndex" type="submit" class="btn btn-primary btn-block center-block">Ir al laboratorio</button>
 			</form>
 
 			<form action='/almacen'>
-			<button type="submit" class="btn btn-primary btn-block center-block">Ir al almacen</button>
+			<button  id = "botonIndex" type="submit" class="btn btn-primary btn-block center-block">Ir al almacen</button>
 			</form>
 
-      <!--
-			{% for e in elementos_list %}
-				{{e.Simbolo_Elemento}}
-			{% endfor %}
-      -->
 		</div>
 
 
