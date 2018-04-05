@@ -51,7 +51,7 @@
 			font-size: 2em;
 			font-family: 'Pacifico', cursive;
 			padding: 5px 10px;;
-			color: #FFEABE;
+			color: #ffcc00;
 		}
 
 		#F_Ex{
@@ -75,14 +75,12 @@
 	<div class="contenedor">
   <div class="row">
     <div class="elemens">
-			<h1 id="titulo" class="text-center">Elementos químicos</h1>
-			{% for e in elementos_list %}
-			<img id= "F_Ex"src="/static/alchemy/{{e.Foto_Tarjeta}}" style="width:25%;" alt=Hidrogeno >
-			{% endfor %}
+      <h1 id="titulo" class="text-center">Elementos químicos</h1>
+			<img id= "F_Ex"src="images/Hidrogeno.png" style="width:25%;" alt=Hidrogeno >
+
 			<form action='../almacen'>
 			<button id = "Button" type="submit" class="btn btn-outline-primary">Almacen</button>
 			</form>
-
     </div>
     <div class="mixspace">
       <h1 id="titulo" class="text-center">Área de trabajo</h1>
