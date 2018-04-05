@@ -12,7 +12,8 @@ class Index(TemplateView):
 class Mezclar(TemplateView):
 
     def get(self, request, **kwargs):
-        return render(request, 'alchemy/mezclar.html', {})
+        elementos_list = Elementos.objects.all()
+        return render(request, 'alchemy/mezclar.html', {'elementos_list' : elementos_list})
 
 class Almacen(TemplateView):
 
