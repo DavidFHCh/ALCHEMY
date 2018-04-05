@@ -71,7 +71,9 @@
 				
 				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 				<div class="card">
-				<img class="card-img-top img-thumbnail center-block" src="Elementos/hidrogeno.png" alt="H" height="100" width="200">
+				{% with filename=e.Foto_Elemento %}
+				<img class="card-img-top img-thumbnail center-block" src="/static/alchemy/{{filename}}" alt="H" height="100" width="200">
+				{% endwith %}
 				<div class="card-body">
 					<a href="#info{{ forloop.counter }}" class="btn btn-link btn-lg center-block" data-toggle="modal">{{e.Nombre_Elemento}}<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
 

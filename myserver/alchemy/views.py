@@ -7,7 +7,7 @@ class Index(TemplateView):
 
     def get(self, request, **kwargs):
         elementos_list= Elementos.objects.all()
-        return render(request, 'alchemy/index.html', {'elementos_list' : elementos_list})
+        return render(request, 'alchemy/index.html', {})
 
 class Mezclar(TemplateView):
 
