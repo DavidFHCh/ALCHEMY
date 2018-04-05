@@ -38,6 +38,7 @@
 			height: auto;
 			width: 70%;
 			background-color: #1E1F3D;
+			display: flex;
 		}
 
 		.row{
@@ -54,43 +55,83 @@
 			color: #ffcc00;
 		}
 
-		#F_Ex{
+		.F_Ex{
 			display: block;
 			margin-top: 3px;
 			margin-left: auto;
-    	margin-right: auto;
+    		margin-right: auto;
 
 		}
 
 		#Button{
 			position: absolute;
-    bottom: 8px;
-    left: 16px;
-    font-size: 18px;
+    		bottom: 8px;
+    		left: 16px;
+    		font-size: 18px;
+		}
+
+		.mspace {
+ 			flex-grow: 1;
 		}
   	</style>
+
+	<script>
+	function allowDrop(ev) {
+		ev.preventDefault();
+	}
+
+	function drag(ev) {
+		ev.dataTransfer.setData("text", ev.target.id);
+	}
+
+	function drop(ev) {
+		ev.preventDefault();
+		var data = ev.dataTransfer.getData("text");
+		ev.target.appendChild(document.getElementById(data));
+		testing();
+	}
+
+	function testing(){
+		var correcto = 1;
+		var pokes = document.getElementsByClassName("pokemon");
+		for(var i=0;i<pokes.length;i++){
+			if(pokes[i].getAttribute("name") != pokes[i].parentNode.getAttribute("id")){
+				correcto = correcto*0;
+				break;
+			}
+		}
+		if(correcto == 1){
+			document.getElementById("resultado").innerHTML = "CORRECTO";
+		}else{
+			document.getElementById("resultado").innerHTML = "INCOMPLETO";
+		}
+
+	}
+	</script>
 
 </head>
 <body class="contenedor">
 	{% load staticfiles %}
-	<div class="contenedor">
+	<section class="contenedor" ondrop="drop(event)" ondragover="allowDrop(event)">
   <div class="row">
     <div class="elemens">
       <h1 id="titulo" class="text-center">Elementos químicos</h1>
-			<img id= "F_Ex"src="{% static "alchemy/hidrogeno.png" %}" style="width:40%;" alt=Hidrogeno >
-			<img id= "F_Ex"src="{% static "alchemy/cloro.png" %}" style="width:40%;" alt=Cloro >
-			<img id= "F_Ex"src="{% static "alchemy/nitrogeno.png" %}" style="width:40%;" alt=Nitrogeno >
-			<img id= "F_Ex"src="{% static "alchemy/oxigeno.png" %}" style="width:40%;" alt=Oxigeno >
-			<img id= "F_Ex"src="{% static "alchemy/sodio.png" %}" style="width:40%;" alt=Sodio >
+			<img id="e1"class="F_Ex" src="{% static "alchemy/hidrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="width:40%;" alt=Hidrogeno >
+			<img id="e2"class="F_Ex" src="{% static "alchemy/cloro.png" %}" draggable="true" ondragstart="drag(event)" style="width:40%;" alt=Cloro >
+			<img id="e3"class="F_Ex" src="{% static "alchemy/nitrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="width:40%;" alt=Nitrogeno >
+			<img id="e4"class="F_Ex" src="{% static "alchemy/oxigeno.png" %}" draggable="true" ondragstart="drag(event)" style="width:40%;" alt=Oxigeno >
+			<img id="e5"class="F_Ex" src="{% static "alchemy/sodio.png" %}" draggable="true" ondragstart="drag(event)" style="width:40%;" alt=Sodio >
 
 			<form action='../almacen'>
 			<button id = "Button" type="submit" class="btn btn-outline-primary">Almacen</button>
 			</form>
     </div>
     <div class="mixspace">
-      <h1 id="titulo" class="text-center">Área de trabajo</h1>
+		<div class="mspace" id="fuego" ondrop="drop(event)" ondragover="allowDrop(event)">
+      		<h1 id="titulo" class="text-center">Área de trabajo</h1>
+	  </div>
     </div>
 
   </div>
-</div>
+</section>
 </body>
