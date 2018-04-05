@@ -14,7 +14,7 @@
 		<style type="text/css">
 
 			html, body {
-    			height: 100%; 
+    			height: 100%;
     			margin: 0;
     			padding: 0
     		}
@@ -59,7 +59,7 @@
 	</head>
 
 	<body>
-		
+		{% load staticfiles %}
 		<div class="container">
 
 			<div class="row">
@@ -67,15 +67,15 @@
 				<!- Cuadros que mostraran la informacion de los elementos. ->
 
 				<!- HIDROGENO ->
-				
+
 				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					
+
 					<div class="card">
-						
-						<img class="card-img-top img-thumbnail center-block" src="Elementos/hidrogeno.png" alt="H" height="100" width="200">
+
+						<img class="card-img-top img-thumbnail center-block" src="{% static "alchemy/Hidrogeno.jpg" %}" alt="H" height="100" width="200">
 
 						<div class="card-body">
-							
+
 							<a href="#info_h" class="btn btn-link btn-lg center-block" data-toggle="modal">Hidrógeno <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
 
 							<div class="modal fade" id="info_h">
@@ -104,10 +104,10 @@
 				<!- OXIGENO ->
 
 				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					
+
 					<div class="card">
-						
-						<img class="card-img-top img-thumbnail center-block" src="Elementos/oxigeno.png" alt="O" height="100" width="200">
+
+						<img class="card-img-top img-thumbnail center-block" src="{% static "alchemy/Oxigeno.jpg" %}" alt="O" height="100" width="200">
 
 						<div class="card-body">
 
@@ -136,25 +136,28 @@
 
 				</div>
 
-				<!- CALCIO ->
+
+
+
+				<!- SODIO ->
 
 				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					
+
 					<div class="card">
-						
-						<img class="card-img-top img-thumbnail center-block" src="Elementos/calcio.png" alt="Ca" height="100" width="200">
+
+						<img class="card-img-top img-thumbnail center-block" src="{% static "alchemy/Sodio.jpg" %}" alt="C" height="100" width="200">
 
 						<div class="card-body">
 
-							<a href="#info_ca" class="btn btn-link btn-lg center-block" data-toggle="modal">Calcio <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+							<a href="#info_c" class="btn btn-link btn-lg center-block" data-toggle="modal">Sodio <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
 
-							<div class="modal fade" id="info_ca">
+							<div class="modal fade" id="info_c">
 								<div class="modal-dialog">
 									<div class="modal-content">
 
 										<div class="modal-header">
 											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											<h4 class="modal-title">Calcio</h4>
+											<h4 class="modal-title">Carbono</h4>
 										</div>
 
 										<div class="modal-body">
@@ -171,25 +174,25 @@
 
 				</div>
 
-				<!- PLUTONIO ->
+				<!- NITROGENO ->
 
 				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					
+
 					<div class="card">
-						
-						<img class="card-img-top img-thumbnail center-block" src="Elementos/plutonio.png" alt="Pu" height="100" width="200">
+
+						<img class="card-img-top img-thumbnail center-block" src="{% static "alchemy/Nitrogeno.jpg" %}" alt="C" height="100" width="200">
 
 						<div class="card-body">
 
-							<a href="#info_pu" class="btn btn-link btn-lg center-block" data-toggle="modal">Plutonio <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+							<a href="#info_c" class="btn btn-link btn-lg center-block" data-toggle="modal">Nitrogeno <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
 
-							<div class="modal fade" id="info_pu">
+							<div class="modal fade" id="info_c">
 								<div class="modal-dialog">
 									<div class="modal-content">
 
 										<div class="modal-header">
 											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-											<h4 class="modal-title">Plutonio</h4>
+											<h4 class="modal-title">Carbono</h4>
 										</div>
 
 										<div class="modal-body">
@@ -206,17 +209,17 @@
 
 				</div>
 
-				<!- CARBONO ->
+				<!- CLORO ->
 
 				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					
+
 					<div class="card">
-						
-						<img class="card-img-top img-thumbnail center-block" src="Elementos/carbono.png" alt="C" height="100" width="200">
+
+						<img class="card-img-top img-thumbnail center-block" src="{% static "alchemy/Cloro.jpg" %}" alt="C" height="100" width="200">
 
 						<div class="card-body">
 
-							<a href="#info_c" class="btn btn-link btn-lg center-block" data-toggle="modal">Carbono <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+							<a href="#info_c" class="btn btn-link btn-lg center-block" data-toggle="modal">Cloro <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
 
 							<div class="modal fade" id="info_c">
 								<div class="modal-dialog">

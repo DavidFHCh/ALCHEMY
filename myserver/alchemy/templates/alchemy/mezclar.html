@@ -72,11 +72,16 @@
 
 </head>
 <body class="contenedor">
+	{% load staticfiles %}
 	<div class="contenedor">
   <div class="row">
     <div class="elemens">
       <h1 id="titulo" class="text-center">Elementos químicos</h1>
-			<img id= "F_Ex"src="images/Hidrogeno.png" style="width:25%;" alt=Hidrogeno >
+			<img id= "F_Ex"src="{% static "alchemy/hidrogeno.png" %}" style="width:40%;" alt=Hidrogeno >
+			<img id= "F_Ex"src="{% static "alchemy/cloro.png" %}" style="width:40%;" alt=Cloro >
+			<img id= "F_Ex"src="{% static "alchemy/nitrogeno.png" %}" style="width:40%;" alt=Nitrogeno >
+			<img id= "F_Ex"src="{% static "alchemy/oxigeno.png" %}" style="width:40%;" alt=Oxigeno >
+			<img id= "F_Ex"src="{% static "alchemy/sodio.png" %}" style="width:40%;" alt=Sodio >
 
 			<form action='../almacen'>
 			<button id = "Button" type="submit" class="btn btn-outline-primary">Almacen</button>
