@@ -18,14 +18,14 @@
     			margin: 0;
     			padding: 0
     		}
-
-    		.container {
+    		.container-fluid {
+					/*
     			height: 100%;
     			width: 100%;
+					*/
     			padding: 2%;
     			background-color: #1E1F3D;
   		  	}
-
   		  	.btn-link {
   		  		color: #6fd7e4;
   		  		font-size: 20px;
@@ -35,12 +35,7 @@
   		  		font-size: 15px;
   		  	}
 
-  		  	footer {
-			    position: fixed;
-			    height: 100px;
-			    bottom: 0;
-			    width: 100%;
-			}
+
 
 			.btn-block {
     			width: 40%;
@@ -60,7 +55,7 @@
 
 	<body>
 		{% load staticfiles %}
-		<div class="container">
+		<div class="container-fluid">
 
 			<div class="row">
 
@@ -68,7 +63,7 @@
 
 				<!- HIDROGENO ->
 
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<div class="col-md-3 col-sm-6 col-xs-12">
 
 					<div class="card">
 
@@ -103,7 +98,7 @@
 
 				<!- OXIGENO ->
 
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<div class=" col-md-3 col-sm-6 col-xs-12">
 
 					<div class="card">
 
@@ -141,7 +136,7 @@
 
 				<!- SODIO ->
 
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<div class=" col-md-3 col-sm-6 col-xs-12">
 
 					<div class="card">
 
@@ -176,7 +171,7 @@
 
 				<!- NITROGENO ->
 
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<div class=" col-md-3 col-sm-6 col-xs-12">
 
 					<div class="card">
 
@@ -211,7 +206,7 @@
 
 				<!- CLORO ->
 
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<div class=" col-md-3 col-sm-6 col-xs-12">
 
 					<div class="card">
 
@@ -244,15 +239,15 @@
 
 				</div>
 
-				<!- BOTON PARA IR AL LABORATORIO ->
-
-				<footer class="fixed-botom">
-					<form action='../mezclar'>
-					<button type="submit" class="btn btn-primary btn-block center-block">Ir al laboratorio</button>
-					</form>
-				</footer>
 
 			</div>
+			<!- BOTON PARA IR AL LABORATORIO ->
+
+			<br>
+
+			<footer class="fixed-botom">
+				<a href="../mezclar" class="btn btn-primary btn-block center-block">Ir al laboratorio</a>
+			</footer>
 
 		</div>
 

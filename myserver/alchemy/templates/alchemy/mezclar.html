@@ -56,10 +56,10 @@
 		}
 
 		.F_Ex{
-			display: block;
+			display: inline-block;
 			margin-top: 3px;
-			margin-left: auto;
-    		margin-right: auto;
+			margin-left: 10px;
+    	margin-right: 10px;
 
 		}
 
@@ -116,15 +116,13 @@
   <div class="row">
     <div class="elemens">
       <h1 id="titulo" class="text-center">Elementos químicos</h1>
-			<img id="e1"class="F_Ex" src="{% static "alchemy/hidrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="width:40%;" alt=Hidrogeno >
-			<img id="e2"class="F_Ex" src="{% static "alchemy/cloro.png" %}" draggable="true" ondragstart="drag(event)" style="width:40%;" alt=Cloro >
-			<img id="e3"class="F_Ex" src="{% static "alchemy/nitrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="width:40%;" alt=Nitrogeno >
-			<img id="e4"class="F_Ex" src="{% static "alchemy/oxigeno.png" %}" draggable="true" ondragstart="drag(event)" style="width:40%;" alt=Oxigeno >
-			<img id="e5"class="F_Ex" src="{% static "alchemy/sodio.png" %}" draggable="true" ondragstart="drag(event)" style="width:40%;" alt=Sodio >
+			<img id="e1"class="F_Ex" src="{% static "alchemy/hidrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Hidrogeno >
+			<img id="e2"class="F_Ex" src="{% static "alchemy/cloro.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Cloro >
+			<img id="e3"class="F_Ex" src="{% static "alchemy/nitrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Nitrogeno >
+			<img id="e4"class="F_Ex" src="{% static "alchemy/oxigeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Oxigeno >
+			<img id="e5"class="F_Ex" src="{% static "alchemy/sodio.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Sodio >
 
-			<form action='../almacen'>
-			<button id = "Button" type="submit" class="btn btn-outline-primary">Almacen</button>
-			</form>
+			<a id="Button" href="../almacen" class="btn btn-outline-primary center-block">Almacen</a>
     </div>
     <div class="mixspace">
 		<div class="mspace" id="fuego" ondrop="drop(event)" ondragover="allowDrop(event)">
