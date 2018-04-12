@@ -78,14 +78,24 @@
 			event.target.appendChild(document.getElementById(data));
 		}
 	}
+
+	function dropExtra(ev) {
+		ev.preventDefault();
+		var data = ev.dataTransfer.getData("text");
+		if ( event.target.nodeName !== "IMG" ) {
+			event.target.appendChild(document.getElementById(data));
+		} else {
+			alert("Aqui te mando cosas");
+		}
+	}
 	</script>
 
 </head>
 <body class="contenedor">
 	{% load staticfiles %}
-	<section class="contenedor" ondrop="drop(event)" ondragover="allowDrop(event)">
+	<section class="contenedor" ondragover="allowDrop(event)">
   <div class="row">
-    <div class="elemens">
+    <div class="elemens" ondrop="drop(event)">
       <h1 id="titulo" class="text-center">Elementos químicos</h1>
 			<img id="e1"class="F_Ex" src="{% static "alchemy/hidrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Hidrogeno >
 			<img id="e2"class="F_Ex" src="{% static "alchemy/cloro.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Cloro >
@@ -95,8 +105,8 @@
 
 			<a id="Button" href="../almacen" class="btn btn-outline-primary center-block">Almacen</a>
     </div>
-    <div class="mixspace">
-		<div class="mspace" id="fuego" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div class="mixspace" ondrop="drop(event)">
+		<div class="mspace" id="fuego" ondrop="dropExtra(event)" ondragover="allowDrop(event)">
       		<h1 id="titulo" class="text-center">Área de trabajo</h1>
 	  </div>
     </div>
