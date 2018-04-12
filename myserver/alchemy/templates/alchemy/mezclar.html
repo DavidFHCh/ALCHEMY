@@ -87,7 +87,7 @@
 		} else {
 			var draggableId = ui.draggable.attr("id");
   			var droppableId = $(this).attr("id");
-			alert("Aqui te mando cosas"+ droppableId + draggableId);
+			alert("Aqui te mando cosas");
 		}
 	}
 	</script>
@@ -111,7 +111,7 @@
  				{% with filename=e.Foto_Tarjeta %}
  				<img id="{{e.Nombre_Elemento}}"class="F_Ex" src="/static/alchemy/{{filename}}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Hidrogeno >
  				{% endwith %}
- 					{% endfor %}
+ 			{% endfor %}
 
 			<a id="Button" href="../almacen" class="btn btn-outline-primary center-block">Almacen</a>
     </div>
