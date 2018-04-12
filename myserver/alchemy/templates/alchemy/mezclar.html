@@ -103,6 +103,14 @@
 			<img id="e4"class="F_Ex" src="{% static "alchemy/oxigeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Oxigeno >
 			<img id="e5"class="F_Ex" src="{% static "alchemy/sodio.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Sodio >
 
+
+
+			{% for e in elementos_list %}
+ 				{% with filename=e.Foto_Tarjeta %}
+ 				<img id="{{e.Nombre_Elemento}}"class="F_Ex" src="/static/alchemy/{{filename}}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Hidrogeno >
+ 				{% endwith %}
+ 					{% endfor %}
+
 			<a id="Button" href="../almacen" class="btn btn-outline-primary center-block">Almacen</a>
     </div>
     <div class="mixspace" ondrop="drop(event)">
