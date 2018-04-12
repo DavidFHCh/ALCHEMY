@@ -16,60 +16,49 @@
   			margin: 0;
   			padding: 0;
   		}
-
   		.contenedor{
 				height: 100%;
   			display: table;
   			width: 100%;
 				margin-left: auto;
 			  margin-right: auto;
-
 		}
-
 		.elemens{
 			height: auto;
 			width: 30%;
 			border-right: 1px solid #FFEABE;
 			background-color: #1E1F3D;
-
 		}
-
 		.mixspace{
 			height: auto;
 			width: 70%;
 			background-color: #1E1F3D;
 			display: flex;
 		}
-
 		.row{
 			height: 100%;
 			width: 100%;
 			margin-left: auto;
 			margin-right: auto;
 		}
-
 		h1 {
 			font-size: 2em;
 			font-family: 'Pacifico', cursive;
 			padding: 5px 10px;;
 			color: #ffcc00;
 		}
-
 		.F_Ex{
 			display: inline-block;
 			margin-top: 3px;
 			margin-left: 10px;
     	margin-right: 10px;
-
 		}
-
 		#Button{
 			position: absolute;
     		bottom: 8px;
     		left: 16px;
     		font-size: 18px;
 		}
-
 		.mspace {
  			flex-grow: 1;
 		}
@@ -79,42 +68,34 @@
 	function allowDrop(ev) {
 		ev.preventDefault();
 	}
-
 	function drag(ev) {
 		ev.dataTransfer.setData("text", ev.target.id);
 	}
-
 	function drop(ev) {
 		ev.preventDefault();
 		var data = ev.dataTransfer.getData("text");
-		ev.target.appendChild(document.getElementById(data));
-		testing();
+		if ( event.target.nodeName !== "IMG" ) {
+			event.target.appendChild(document.getElementById(data));
+		}
 	}
 
-	function testing(){
-		var correcto = 1;
-		var pokes = document.getElementsByClassName("pokemon");
-		for(var i=0;i<pokes.length;i++){
-			if(pokes[i].getAttribute("name") != pokes[i].parentNode.getAttribute("id")){
-				correcto = correcto*0;
-				break;
-			}
+	function dropExtra(ev) {
+		ev.preventDefault();
+		var data = ev.dataTransfer.getData("text");
+		if ( event.target.nodeName !== "IMG" ) {
+			event.target.appendChild(document.getElementById(data));
+		} else {
+			alert("Aqui te mando cosas");
 		}
-		if(correcto == 1){
-			document.getElementById("resultado").innerHTML = "CORRECTO";
-		}else{
-			document.getElementById("resultado").innerHTML = "INCOMPLETO";
-		}
-
 	}
 	</script>
 
 </head>
 <body class="contenedor">
 	{% load staticfiles %}
-	<section class="contenedor" ondrop="drop(event)" ondragover="allowDrop(event)">
+	<section class="contenedor" ondragover="allowDrop(event)">
   <div class="row">
-    <div class="elemens">
+    <div class="elemens" ondrop="drop(event)">
       <h1 id="titulo" class="text-center">Elementos químicos</h1>
 			<img id="e1"class="F_Ex" src="{% static "alchemy/hidrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Hidrogeno >
 			<img id="e2"class="F_Ex" src="{% static "alchemy/cloro.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Cloro >
@@ -124,8 +105,8 @@
 
 			<a id="Button" href="../almacen" class="btn btn-outline-primary center-block">Almacen</a>
     </div>
-    <div class="mixspace">
-		<div class="mspace" id="fuego" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <div class="mixspace" ondrop="drop(event)">
+		<div class="mspace" id="fuego" ondrop="dropExtra(event)" ondragover="allowDrop(event)">
       		<h1 id="titulo" class="text-center">Área de trabajo</h1>
 	  </div>
     </div>
