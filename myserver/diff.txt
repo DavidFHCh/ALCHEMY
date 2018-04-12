@@ -1,0 +1,340 @@
+diff --git a/myserver/alchemy/__pycache__/__init__.cpython-35.pyc b/myserver/alchemy/__pycache__/__init__.cpython-35.pyc
+index ece1b6f..cca0dc9 100644
+Binary files a/myserver/alchemy/__pycache__/__init__.cpython-35.pyc and b/myserver/alchemy/__pycache__/__init__.cpython-35.pyc differ
+diff --git a/myserver/alchemy/__pycache__/admin.cpython-35.pyc b/myserver/alchemy/__pycache__/admin.cpython-35.pyc
+index 1a63f68..d102fe6 100644
+Binary files a/myserver/alchemy/__pycache__/admin.cpython-35.pyc and b/myserver/alchemy/__pycache__/admin.cpython-35.pyc differ
+diff --git a/myserver/alchemy/__pycache__/models.cpython-35.pyc b/myserver/alchemy/__pycache__/models.cpython-35.pyc
+index 84491dc..fa3dc3f 100644
+Binary files a/myserver/alchemy/__pycache__/models.cpython-35.pyc and b/myserver/alchemy/__pycache__/models.cpython-35.pyc differ
+diff --git a/myserver/alchemy/__pycache__/urls.cpython-35.pyc b/myserver/alchemy/__pycache__/urls.cpython-35.pyc
+index 19ed0da..67bbfaa 100644
+Binary files a/myserver/alchemy/__pycache__/urls.cpython-35.pyc and b/myserver/alchemy/__pycache__/urls.cpython-35.pyc differ
+diff --git a/myserver/alchemy/__pycache__/views.cpython-35.pyc b/myserver/alchemy/__pycache__/views.cpython-35.pyc
+index 7099fb5..3b0a48e 100644
+Binary files a/myserver/alchemy/__pycache__/views.cpython-35.pyc and b/myserver/alchemy/__pycache__/views.cpython-35.pyc differ
+diff --git a/myserver/alchemy/migrations/__pycache__/0001_initial.cpython-35.pyc b/myserver/alchemy/migrations/__pycache__/0001_initial.cpython-35.pyc
+index 93611c8..b73e972 100644
+Binary files a/myserver/alchemy/migrations/__pycache__/0001_initial.cpython-35.pyc and b/myserver/alchemy/migrations/__pycache__/0001_initial.cpython-35.pyc differ
+diff --git a/myserver/alchemy/migrations/__pycache__/0002_mezclas.cpython-35.pyc b/myserver/alchemy/migrations/__pycache__/0002_mezclas.cpython-35.pyc
+index de4bd0a..ff4ddeb 100644
+Binary files a/myserver/alchemy/migrations/__pycache__/0002_mezclas.cpython-35.pyc and b/myserver/alchemy/migrations/__pycache__/0002_mezclas.cpython-35.pyc differ
+diff --git a/myserver/alchemy/migrations/__pycache__/__init__.cpython-35.pyc b/myserver/alchemy/migrations/__pycache__/__init__.cpython-35.pyc
+index c108487..2f6a69f 100644
+Binary files a/myserver/alchemy/migrations/__pycache__/__init__.cpython-35.pyc and b/myserver/alchemy/migrations/__pycache__/__init__.cpython-35.pyc differ
+diff --git a/myserver/alchemy/templates/alchemy/almacen.html b/myserver/alchemy/templates/alchemy/almacen.html
+index d17f401..c47ce44 100644
+--- a/myserver/alchemy/templates/alchemy/almacen.html
++++ b/myserver/alchemy/templates/alchemy/almacen.html
+@@ -18,7 +18,7 @@
+     			margin: 0;
+     			padding: 0
+     		}
+-    		.container-fluid {
++    		.container {
+ 					/*
+     			height: 100%;
+     			width: 100%;
+@@ -35,209 +35,84 @@
+   		  		font-size: 15px;
+   		  	}
+ 
+-
+-
+-			.btn-block {
+-    			width: 40%;
+-    		}
+-
+     		.btn-primary {
+     			background-color: #6fd7e4;
+     			border-color: #1e1f3d;
+     			border-radius: 30px;
+     			color: #1e1f3d;
+     			font-size: 1.2em;
++    			width: 40%;
+     		}
+ 
++    		@media (max-width: 768px) {
++			  .btn-responsive {
++			    padding: 10px;
++			    font-size: 80%;
++			    line-height: 1;
++			    border-radius: 30px;
++			  }
++			}
++
++			@media (min-width: 769px) and (max-width: 992px) {
++			  .btn-responsive {
++			    padding: 10px;
++			    font-size: 90%;
++			    line-height: 1.2;
++			    border-radius: 30px;
++			  }
++			}
++
++
+ 		</style>
+ 
+ 	</head>
+ 
+-	<body>
+-		{% load staticfiles %}
+-		<div class="container-fluid">
++	<body class="container">
++
++		<div class="container">
+ 
+ 			<div class="row">
++			{% load staticfiles %}
+ 
+ 				<!- Cuadros que mostraran la informacion de los elementos. ->
+ 
+-				<!- HIDROGENO ->
+-
+-				<div class="col-md-3 col-sm-6 col-xs-12">
++			{% for e in elementos_list %}
+ 
+-					<div class="card">
++				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
++				<div class="card">
++				{% with filename=e.Foto_Elemento %}
+ 
+-						<img class="card-img-top img-thumbnail center-block" src="{% static "alchemy/Hidrogeno.jpg" %}" alt="H" height="100" width="200">
++				<a href="#info{{ forloop.counter }}" data-toggle="modal">
++					<img class="card-img-top img-thumbnail center-block" src="/static/alchemy/{{filename}}"  height="100" width="200">
++				</a>
+ 
+-						<div class="card-body">
++				
++				<div class="card-body">
+ 
+-							<a href="#info_h" class="btn btn-link btn-lg center-block" data-toggle="modal">Hidrógeno <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+-
+-							<div class="modal fade" id="info_h">
+-								<div class="modal-dialog">
+-									<div class="modal-content">
+-
+-										<div class="modal-header">
+-											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+-											<h4 class="modal-title">Hidrógeno</h4>
+-										</div>
+-
+-										<div class="modal-body">
+-											<p>AQUÍ VA LA INFORMACIÓN.</p>
+-										</div>
+-
+-									</div>
+-								</div>
+-							</div>
+-
+-						</div>
++					<a href="#info{{ forloop.counter }}" class="btn btn-link btn-lg center-block" data-toggle="modal">{{e.Nombre_Elemento}} <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+ 
++					<div class="modal fade" id="info{{ forloop.counter }}">
++					<div class="modal-dialog">
++					<div class="modal-content">
++					<div class="modal-header">
++						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
++						<h4 class="modal-title">{{e.Nombre_Elemento}}</h4>
+ 					</div>
+-
+-				</div>
+-
+-				<!- OXIGENO ->
+-
+-				<div class=" col-md-3 col-sm-6 col-xs-12">
+-
+-					<div class="card">
+-
+-						<img class="card-img-top img-thumbnail center-block" src="{% static "alchemy/Oxigeno.jpg" %}" alt="O" height="100" width="200">
+-
+-						<div class="card-body">
+-
+-							<a href="#info_o" class="btn btn-link btn-lg center-block" data-toggle="modal">Oxigeno <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+-
+-							<div class="modal fade" id="info_o">
+-								<div class="modal-dialog">
+-									<div class="modal-content">
+-
+-										<div class="modal-header">
+-											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+-											<h4 class="modal-title">Oxigeno</h4>
+-										</div>
+-
+-										<div class="modal-body">
+-											<p>AQUÍ VA LA INFORMACIÓN.</p>
+-										</div>
+-
+-									</div>
+-								</div>
+-							</div>
+-
+-						</div>
+-
++					<div class="modal-body">
++						<img class="img-thumbnail center-block" src="/static/alchemy/{{filename}}"  height="200" width="300">
+ 					</div>
+-
+-				</div>
+-
+-
+-
+-
+-				<!- SODIO ->
+-
+-				<div class=" col-md-3 col-sm-6 col-xs-12">
+-
+-					<div class="card">
+-
+-						<img class="card-img-top img-thumbnail center-block" src="{% static "alchemy/Sodio.jpg" %}" alt="C" height="100" width="200">
+-
+-						<div class="card-body">
+-
+-							<a href="#info_c" class="btn btn-link btn-lg center-block" data-toggle="modal">Sodio <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+-
+-							<div class="modal fade" id="info_c">
+-								<div class="modal-dialog">
+-									<div class="modal-content">
+-
+-										<div class="modal-header">
+-											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+-											<h4 class="modal-title">Carbono</h4>
+-										</div>
+-
+-										<div class="modal-body">
+-											<p>AQUÍ VA LA INFORMACIÓN.</p>
+-										</div>
+-
+-									</div>
+-								</div>
+-							</div>
+-
+-						</div>
+-
++					<div class="modal-footer">
++						<p class="text-center">{{e.Informacion_Elemento}}.</p>
+ 					</div>
+-
+-				</div>
+-
+-				<!- NITROGENO ->
+-
+-				<div class=" col-md-3 col-sm-6 col-xs-12">
+-
+-					<div class="card">
+-
+-						<img class="card-img-top img-thumbnail center-block" src="{% static "alchemy/Nitrogeno.jpg" %}" alt="C" height="100" width="200">
+-
+-						<div class="card-body">
+-
+-							<a href="#info_c" class="btn btn-link btn-lg center-block" data-toggle="modal">Nitrogeno <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+-
+-							<div class="modal fade" id="info_c">
+-								<div class="modal-dialog">
+-									<div class="modal-content">
+-
+-										<div class="modal-header">
+-											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+-											<h4 class="modal-title">Carbono</h4>
+-										</div>
+-
+-										<div class="modal-body">
+-											<p>AQUÍ VA LA INFORMACIÓN.</p>
+-										</div>
+-
+-									</div>
+-								</div>
+-							</div>
+-
+-						</div>
+-
+ 					</div>
+-
+-				</div>
+-
+-				<!- CLORO ->
+-
+-				<div class=" col-md-3 col-sm-6 col-xs-12">
+-
+-					<div class="card">
+-
+-						<img class="card-img-top img-thumbnail center-block" src="{% static "alchemy/Cloro.jpg" %}" alt="C" height="100" width="200">
+-
+-						<div class="card-body">
+-
+-							<a href="#info_c" class="btn btn-link btn-lg center-block" data-toggle="modal">Cloro <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+-
+-							<div class="modal fade" id="info_c">
+-								<div class="modal-dialog">
+-									<div class="modal-content">
+-
+-										<div class="modal-header">
+-											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+-											<h4 class="modal-title">Carbono</h4>
+-										</div>
+-
+-										<div class="modal-body">
+-											<p>AQUÍ VA LA INFORMACIÓN.</p>
+-										</div>
+-
+-									</div>
+-								</div>
+-							</div>
+-
+-						</div>
+-
+ 					</div>
+-
++					</div>
++					{% endwith %}
++				</div>
+ 				</div>
++				</div>
++
++			{% endfor %}
+ 
+ 
+ 			</div>
+@@ -246,7 +121,7 @@
+ 			<br>
+ 
+ 			<footer class="fixed-botom">
+-				<a href="../mezclar" class="btn btn-primary btn-block center-block">Ir al laboratorio</a>
++				<a href="../mezclar" class="btn btn-primary btn-responsive center-block">Ir al laboratorio</a>
+ 			</footer>
+ 
+ 		</div>
+diff --git a/myserver/alchemy/templates/alchemy/mezclar.html b/myserver/alchemy/templates/alchemy/mezclar.html
+index 2082aae..12b8217 100644
+--- a/myserver/alchemy/templates/alchemy/mezclar.html
++++ b/myserver/alchemy/templates/alchemy/mezclar.html
+@@ -116,12 +116,12 @@
+   <div class="row">
+     <div class="elemens">
+       <h1 id="titulo" class="text-center">Elementos químicos</h1>
+-			<img id="e1"class="F_Ex" src="{% static "alchemy/hidrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Hidrogeno >
+-			<img id="e2"class="F_Ex" src="{% static "alchemy/cloro.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Cloro >
+-			<img id="e3"class="F_Ex" src="{% static "alchemy/nitrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Nitrogeno >
+-			<img id="e4"class="F_Ex" src="{% static "alchemy/oxigeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Oxigeno >
+-			<img id="e5"class="F_Ex" src="{% static "alchemy/sodio.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Sodio >
+ 
++			{% for e in elementos_list %}
++			{% with filename=e.Foto_Tarjeta %}
++			<img id="e1"class="F_Ex" src="/static/alchemy/{{filename}}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Hidrogeno >
++			{% endwith %}
++				{% endfor %}
+ 			<a id="Button" href="../almacen" class="btn btn-outline-primary center-block">Almacen</a>
+     </div>
+     <div class="mixspace">
+diff --git a/myserver/myserver/__pycache__/__init__.cpython-35.pyc b/myserver/myserver/__pycache__/__init__.cpython-35.pyc
+index 42bcca1..b9f7a4c 100644
+Binary files a/myserver/myserver/__pycache__/__init__.cpython-35.pyc and b/myserver/myserver/__pycache__/__init__.cpython-35.pyc differ
+diff --git a/myserver/myserver/__pycache__/settings.cpython-35.pyc b/myserver/myserver/__pycache__/settings.cpython-35.pyc
+index e846e67..8fd0d76 100644
+Binary files a/myserver/myserver/__pycache__/settings.cpython-35.pyc and b/myserver/myserver/__pycache__/settings.cpython-35.pyc differ
+diff --git a/myserver/myserver/__pycache__/urls.cpython-35.pyc b/myserver/myserver/__pycache__/urls.cpython-35.pyc
+index d37da50..05cc8a7 100644
+Binary files a/myserver/myserver/__pycache__/urls.cpython-35.pyc and b/myserver/myserver/__pycache__/urls.cpython-35.pyc differ
+diff --git a/myserver/myserver/__pycache__/wsgi.cpython-35.pyc b/myserver/myserver/__pycache__/wsgi.cpython-35.pyc
+index 7356a3c..d771e1a 100644
+Binary files a/myserver/myserver/__pycache__/wsgi.cpython-35.pyc and b/myserver/myserver/__pycache__/wsgi.cpython-35.pyc differ
