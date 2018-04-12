@@ -35,19 +35,33 @@
   		  		font-size: 15px;
   		  	}
 
-
-
-			.btn-block {
-    			width: 40%;
-    		}
-
     		.btn-primary {
     			background-color: #6fd7e4;
     			border-color: #1e1f3d;
     			border-radius: 30px;
     			color: #1e1f3d;
     			font-size: 1.2em;
+    			width: 40%;
     		}
+
+    		@media (max-width: 768px) {
+			  .btn-responsive {
+			    padding: 10px;
+			    font-size: 80%;
+			    line-height: 1;
+			    border-radius: 30px;
+			  }
+			}
+
+			@media (min-width: 769px) and (max-width: 992px) {
+			  .btn-responsive {
+			    padding: 10px;
+			    font-size: 90%;
+			    line-height: 1.2;
+			    border-radius: 30px;
+			  }
+			}
+
 
 		</style>
 
@@ -107,7 +121,7 @@
 			<br>
 
 			<footer class="fixed-botom">
-				<a href="../mezclar" class="btn btn-primary btn-block center-block">Ir al laboratorio</a>
+				<a href="../mezclar" class="btn btn-primary btn-responsive center-block">Ir al laboratorio</a>
 			</footer>
 
 		</div>
