@@ -79,13 +79,15 @@
 		}
 	}
 
-	function dropExtra(ev) {
+	function dropExtra(ev, ui) {
 		ev.preventDefault();
 		var data = ev.dataTransfer.getData("text");
 		if ( event.target.nodeName !== "IMG" ) {
 			event.target.appendChild(document.getElementById(data));
 		} else {
-			alert("Aqui te mando cosas");
+			var draggableId = ui.draggable.attr("id");
+  			var droppableId = $(this).attr("id");
+			alert("Aqui te mando cosas"+ droppableId + draggableId);
 		}
 	}
 	</script>
