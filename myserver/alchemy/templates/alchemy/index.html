@@ -22,7 +22,7 @@
   			width: 100%;
   			padding: 0;
   			background-color: #1E1F3D;
-		}
+		  }
 
   		.row {
   			height: 100%;
@@ -31,15 +31,13 @@
   		}
 
   		h1 {
-  			font-size: 4em;
   			font-family: 'Pacifico', cursive;
   			padding-bottom: .4em;
   			color: #ffcc00;
   		}
 
   		.btn-block {
-  			width: 40%;
-
+  			width: 30%;
   		}
 
   		.btn-primary {
@@ -51,19 +49,110 @@
   		}
 
 			#botonIndex{
-				width: 50%;
-				height: 30%;
+        margin-top: 20px;
+				width: 25%;
+				height: 40%;
 			}
 
-			#imagen{
-				width: auto;
-				height: 30%;
-			}
+      @media only screen and  (max-width: 600px) {
+        #imagen{
+          width: 50%;
+          height: 25%;
+        }
 
-			#texto{
-				width: auto;
-				height: auto;
-			}
+        #texto {
+          width: auto;
+          height: auto;
+          font-size: 400%;
+        }
+
+        #botonIndex {
+          margin-top: 20px;
+          width: 40%;
+          height: 30%;
+          font-size: 1.0em;
+        }
+      }
+
+      @media only screen and  (min-width: 600px) {
+        #imagen {
+          width: 45%;
+          height: 30%;
+        }
+
+        #texto {
+          width: auto;
+          height: auto;
+          font-size: 400%;
+        }
+
+        #botonIndex {
+          margin-top: 20px;
+          width: 30%;
+          height: 36%;
+          font-size: 1.1em;
+        }
+      }
+
+      @media only screen and  (min-width: 768px) {
+        #imagen {
+          width: 40%;
+          height: 35%;
+        }
+
+        #texto {
+          width: auto;
+          height: auto;
+          font-size: 500%;
+        }
+
+        #botonIndex {
+          margin-top: 20px;
+          width: 29%;
+          height: 37%;
+          font-size: 1.1em;
+        }
+      }
+
+      @media only screen and  (min-width: 992px) {
+        #imagen {
+          width: 35%;
+          height: 40%;
+        }
+
+        #texto {
+          width: auto;
+          height: auto;
+          font-size: 600%;
+        }
+
+        #botonIndex {
+          margin-top: 20px;
+          width: 23%;
+          height: 38%;
+          font-size: 1.3em;
+        }
+      }
+
+      @media only screen and (min-width: 1200px) {
+        #imagen {
+          width: 30%;
+          height: 45%;
+        }
+
+        #texto {
+          width: auto;
+          height: auto;
+          font-size: 600%;
+        }
+
+        #botonIndex {
+          margin-top: 20px;
+          width: 25%;
+          height: 40%;
+          font-size: 1.5em;
+        }
+      }
   	</style>
 
 </head>
@@ -73,7 +162,7 @@
 		<div class="row">
 			 {% load staticfiles %}
 			<img id = "imagen" src="{% static "alchemy/logo.jpg" %}" class="img-fluid img-circle center-block">
-			<h1 id= "texto"class="text-center">Juego Mágico de Química</h1>
+			<h1 id= "texto" class="text-center">Juego Mágico de Química</h1>
 
 			<form action='/mezclar'>
 			<button id = "botonIndex" type="submit" class="btn btn-primary btn-block center-block">Ir al laboratorio</button>
