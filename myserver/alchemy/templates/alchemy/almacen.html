@@ -18,14 +18,12 @@
     			margin: 0;
     			padding: 0
     		}
+
     		.container {
-					/*
-    			height: 100%;
-    			width: 100%;
-					*/
     			padding: 2%;
     			background-color: #1E1F3D;
   		  	}
+
   		  	.btn-link {
   		  		color: #6fd7e4;
   		  		font-size: 20px;
@@ -40,9 +38,42 @@
     			border-color: #1e1f3d;
     			border-radius: 30px;
     			color: #1e1f3d;
-    			font-size: 1.2em;
-    			width: 40%;
+    			font-size: 1.5em;
     		}
+
+    		.btn-toolbar-centered {
+				text-align: center;
+			}
+
+			.btn-toolbar-centered .btn-group {
+				float: none !important;
+			}
+
+			a {
+				font-family: 'Pacifico', cursive;
+			}
+
+    		@media only screen and  (max-width: 600px) {
+        		
+      		}
+
+      		@media only screen and  (min-width: 600px) {
+        
+      		}
+
+	      	@media only screen and  (min-width: 768px) {
+	        
+	      	}
+
+	      	@media only screen and  (min-width: 992px) {
+	        
+	      	}
+
+	      	@media only screen and (min-width: 1200px) {
+	        	p {
+	        		font-size: 20px;
+	        	}
+	      	}
 
     		@media (max-width: 768px) {
 			  .btn-responsive {
@@ -121,7 +152,14 @@
 			<br>
 
 			<footer class="fixed-botom">
-				<a href="../mezclar" class="btn btn-primary btn-responsive center-block">Ir al laboratorio</a>
+				<div class="btn-toolbar btn-toolbar-centered" role="toolbar">
+					<div class="btn-group" role="group">
+						<a href="../index" class="btn btn-primary">Ir al Inicio</a>
+					</div>
+					<div class="btn-group" role="group">
+						<a href="../mezclar" class="btn btn-primary">Ir al laboratorio</a>
+					</div>
+				</div>
 			</footer>
 
 		</div>
