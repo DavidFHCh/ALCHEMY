@@ -20,17 +20,32 @@
     		}
 
     		.container {
-    			padding: 2%;
+    			padding-bottom: 30px;
     			background-color: #1E1F3D;
   		  	}
 
+  		  	#encabezado {
+  		  		padding-top: 30px;
+  		  		font-family: 'Pacifico', cursive;
+	  			color: #ffcc00;
+  		  	}
+
+  		  	a {
+				font-family: 'Pacifico', cursive;
+			}
+
   		  	.btn-link {
   		  		color: #6fd7e4;
-  		  		font-size: 20px;
   		  	}
 
   		  	span {
   		  		font-size: 15px;
+  		  	}
+
+  		  	.btn-group {
+  		  		padding-top: 20px;
+  		  		padding-left: 60px;
+  		  		padding-right: 60px;
   		  	}
 
     		.btn-primary {
@@ -38,8 +53,11 @@
     			border-color: #1e1f3d;
     			border-radius: 30px;
     			color: #1e1f3d;
-    			font-size: 1.5em;
     		}
+
+    		#boton {			
+				font-family: 'Pacifico', cursive;
+			}
 
     		.btn-toolbar-centered {
 				text-align: center;
@@ -49,51 +67,165 @@
 				float: none !important;
 			}
 
-			a {
-				font-family: 'Pacifico', cursive;
-			}
-
     		@media only screen and  (max-width: 600px) {
-        		
+    			#encabezado {
+					font-size: 400%;
+	      		}
+
+	      		.btn-link {
+	  		  		font-size: 1.4em;
+	  		  	}
+
+	  		  	.card {
+	  		  		padding-top: 40px;
+	  		  	}
+
+	  		  	#imgCard {
+	  		  		width: 190px;
+	  		  		height: 220px;
+	  		  	}
+
+        		p {
+	        		font-size: 16px;
+	        	}
+
+	        	h4 {
+	        		font-size: 20px;
+	        	}
+
+	        	#boton {
+					width: 94%;
+					font-size: 1.5em;
+				}
       		}
 
       		@media only screen and  (min-width: 600px) {
-        
+      			#encabezado {
+					font-size: 410%;
+	      		}
+
+	      		.btn-link {
+	  		  		font-size: 1.4em;
+	  		  	}
+
+	  		  	.card {
+	  		  		padding-top: 40px;
+	  		  	}
+
+	  		  	#imgCard {
+	  		  		width: 190px;
+	  		  		height: 220px;
+	  		  	}
+
+        		p {
+	        		font-size: 18px;
+	        	}
+
+	        	h4 {
+	        		font-size: 20px;
+	        	}
+
+	        	#boton {
+					width: 96%;
+					font-size: 1.5em;
+				}
       		}
 
 	      	@media only screen and  (min-width: 768px) {
-	        
+	      		#encabezado {
+					font-size: 420%;
+	      		}
+
+	      		.btn-link {
+	  		  		font-size: 1.5em;
+	  		  	}
+
+	  		  	.card {
+	  		  		padding-top: 46px;
+	  		  	}
+
+	  		  	#imgCard {
+	  		  		width: 180px;
+	  		  		height: 230px;
+	  		  	}
+
+	        	p {
+	        		font-size: 18px;
+	        	}
+
+	        	h4 {
+	        		font-size: 25px;
+	        	}
+
+	        	#boton {
+					width: 96%;
+					font-size: 1.6em;
+				}
 	      	}
 
 	      	@media only screen and  (min-width: 992px) {
-	        
+	      		#encabezado {
+					font-size: 430%;
+	      		}
+
+	      		.btn-link {
+	  		  		font-size: 1.5em;
+	  		  	}
+
+	  		  	.card {
+	  		  		padding-top: 48px;
+	  		  	}
+
+	  		  	#imgCard {
+	  		  		width: 180px;
+	  		  		height: 230px;
+	  		  	}
+
+	      		p {
+	        		font-size: 20px;
+	        	}
+
+	        	h4 {
+	        		font-size: 25px;
+	        	}
+
+	        	#boton {
+					width: 98%;
+					font-size: 1.6em;
+				}
 	      	}
 
 	      	@media only screen and (min-width: 1200px) {
+	      		#encabezado {
+					font-size: 450%;
+	      		}
+
+	      		.btn-link {
+	  		  		font-size: 1.6em;
+	  		  	}
+
+	  		  	.card {
+	  		  		padding-top: 50px;
+	  		  	}
+
+	  		  	#imgCard {
+	  		  		width: 200px;
+	  		  		height: 250px;
+	  		  	}
+
 	        	p {
 	        		font-size: 20px;
 	        	}
+
+	        	h4 {
+	        		font-size: 30px;
+	        	}
+
+	        	#boton {
+					width: 100%;
+					font-size: 1.6em;
+				}
 	      	}
-
-    		@media (max-width: 768px) {
-			  .btn-responsive {
-			    padding: 10px;
-			    font-size: 80%;
-			    line-height: 1;
-			    border-radius: 30px;
-			  }
-			}
-
-			@media (min-width: 769px) and (max-width: 992px) {
-			  .btn-responsive {
-			    padding: 10px;
-			    font-size: 90%;
-			    line-height: 1.2;
-			    border-radius: 30px;
-			  }
-			}
-
-
 		</style>
 
 	</head>
@@ -105,16 +237,19 @@
 			<div class="row">
 			{% load staticfiles %}
 
-				<!- Cuadros que mostraran la informacion de los elementos. ->
+			<div>
+				<h4 id="encabezado" class="text-center">Almacén</h4>
+			</div>
 
 			{% for e in elementos_list %}
 
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+				<!- Cuadros que mostraran la informacion de los elementos. ->
 				<div class="card">
 				{% with filename=e.Foto_Elemento %}
 
 				<a href="#info{{ forloop.counter }}" data-toggle="modal">
-					<img class="card-img-top img-thumbnail center-block" src="/static/alchemy/{{filename}}"  height="100" width="200">
+					<img id="imgCard" class="card-img-top img-thumbnail center-block" src="/static/alchemy/{{filename}}">
 				</a>
 
 				
@@ -154,10 +289,14 @@
 			<footer class="fixed-botom">
 				<div class="btn-toolbar btn-toolbar-centered" role="toolbar">
 					<div class="btn-group" role="group">
-						<a href="../index" class="btn btn-primary">Ir al Inicio</a>
+						<form action='/'>
+							<button id="boton" class="btn btn-primary">Ir al Inicio</button>
+						</form>
 					</div>
 					<div class="btn-group" role="group">
-						<a href="../mezclar" class="btn btn-primary">Ir al laboratorio</a>
+						<form action='/mezclar'>
+							<button id="boton" class="btn btn-primary">Ir al laboratorio</button>
+						</form>
 					</div>
 				</div>
 			</footer>
