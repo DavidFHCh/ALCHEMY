@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+
+"""
+Módulo inicial para Django, inicia el servidor.
+"""
+
 import os
 import sys
 

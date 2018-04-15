@@ -1,3 +1,4 @@
+<!- Vista Principal de la app ->
 
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+	<!- Definición del CSS para la vista principal->
   	<style type="text/css">
   		html, body {
   			height: 100%;
@@ -161,10 +163,12 @@
 	<div class="container">
 
 		<div class="row">
-			 {% load staticfiles %}
+			<!- Carga de las imágenes guardadas en el servidor ->
+			{% load staticfiles %}
 			<img id = "imagen" src="{% static "alchemy/logo.jpg" %}" class="img-fluid img-circle center-block">
 			<h1 id= "texto" class="text-center">Juego Mágico de Química</h1>
 
+			<!- Crear botones para navegar el sitio ->
 			<form action='/mezclar'>
 			<button id = "botonIndex" type="submit" class="btn btn-primary btn-block center-block">Ir al laboratorio</button>
 			</form>

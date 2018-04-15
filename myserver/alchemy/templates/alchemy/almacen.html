@@ -241,6 +241,7 @@
 				<h4 id="encabezado" class="text-center">Almacén</h4>
 			</div>
 
+			<!- Se itera sobre los elementos que se cargan desde el modelo de Django ->
 			{% for e in elementos_list %}
 
 				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -282,17 +283,19 @@
 
 
 			</div>
-			<!- BOTON PARA IR AL LABORATORIO ->
+			<!- Botones para navegar ->
 
 			<br>
 
 			<footer class="fixed-botom">
 				<div class="btn-toolbar btn-toolbar-centered" role="toolbar">
+					<!- Botón para regresar a la vista principal ->
 					<div class="btn-group" role="group">
 						<form action='/'>
 							<button id="boton" class="btn btn-primary">Ir al Inicio</button>
 						</form>
 					</div>
+					<!- Botón para regresar a la vista del laboratorio ->
 					<div class="btn-group" role="group">
 						<form action='/mezclar'>
 							<button id="boton" class="btn btn-primary">Ir al laboratorio</button>
