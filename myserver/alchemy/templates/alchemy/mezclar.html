@@ -23,6 +23,12 @@
 				margin-left: auto;
 			  margin-right: auto;
 		}
+
+		#titulo {
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+
 		.elemens{
 			height: auto;
 			width: 30%;
@@ -53,14 +59,41 @@
 			margin-left: 10px;
     	margin-right: 10px;
 		}
-		#Button{
+
+		.btn-primary {
+			background-color: #6fd7e4;
+			border-color: #1e1f3d;
+			border-radius: 30px;
+			color: #1e1f3d;
+			font-family: 'Pacifico', cursive;
+		}
+
+		#Button1{
 			position: absolute;
     		bottom: 8px;
     		left: 16px;
     		font-size: 18px;
 		}
+
+		#Button2{
+			position: absolute;
+    		bottom: 8px;
+    		left: 150px;
+    		font-size: 18px;
+		}
+
+		#Button3 {
+			width: 100%;
+			bottom: 8px;
+			font-size: 18px;
+		}
+
 		.mspace {
  			flex-grow: 1;
+		}
+
+		#titulo {
+			font-size: 290%;
 		}
   	</style>
 
@@ -118,7 +151,8 @@
 	</script>
 	{% load staticfiles %}
 	<section class="contenedor" ondragover="allowDrop(event)">
-  <div class="row">
+  	<div class="row">
+
     <div class="elemens" ondrop="drop(event)">
       <h1 id="titulo" class="text-center">Elementos químicos</h1>
 			<img id="e1"class="F_Ex" src="{% static "alchemy/hidrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=H >
@@ -127,13 +161,15 @@
 			<img id="e4"class="F_Ex" src="{% static "alchemy/oxigeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=O >
 			<img id="e5"class="F_Ex" src="{% static "alchemy/sodio.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Na >
 
-
-			<a id="Button" href="../almacen" class="btn btn-outline-primary center-block">Almacen</a>
+			<div>
+			<a id="Button1" href="../" class="btn btn-primary center-block">Ir al Inicio</a>
+			<a id="Button2" href="../almacen" class="btn btn-primary center-block">Ir al almacén</a>
+		</div>
     </div>
     <div class="mixspace" >
 		<div class="mspace" id="fuego" ondrop="dropExtra(event)" ondragover="allowDrop(event)">
       		<h1 id="titulo" class="text-center">Área de trabajo</h1>
-			<button id="mezclar" type="button" onClick="getChilds()" class="btn btn-primary btn-block center-block">Mezclar</button>
+			<button id="Button3" type="button" onClick="getChilds()" class="btn btn-primary center-block">Mezclar</button>
 	  </div>
     </div>
 
@@ -150,6 +186,7 @@
       </div>
       <div class="modal-body">
         <img src="{% static "alchemy/agua.png" %}" alt="" class="img img-responsive center-block" style="max-height:200px;">
+        <audio src="ta_da.mp3" type="audio/mpeg"></audio>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -168,6 +205,7 @@
       </div>
       <div class="modal-body">
         <img src="{% static "alchemy/aire.png" %}" alt="" class="img img-responsive center-block" style="max-height:200px;">
+        <audio src="ta_da.mp3" type="audio/mpeg"></audio>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -186,6 +224,7 @@
       </div>
       <div class="modal-body">
         <img src="{% static "alchemy/sal.png" %}" alt="" class="img img-responsive center-block" style="max-height:200px;">
+        <audio src="ta_da.mp3" type="audio/mpeg"></audio>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -210,6 +249,7 @@
 					<li>O + H -> ?</li>
 					<li>N + O -> ?</li>
 				</ul>
+				<audio src="boo.mp3" type="audio/mpeg"></audio>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
