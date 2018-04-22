@@ -69,21 +69,23 @@
 		}
 
 		#Button1{
-			position: absolute;
+			position: fixed;
     		bottom: 8px;
-    		left: 16px;
+    		left: 1%;
     		font-size: 18px;
 		}
 
 		#Button2{
-			position: absolute;
+			position: fixed;
     		bottom: 8px;
-    		left: 150px;
+    		left: 10%;
     		font-size: 18px;
 		}
 
 		#Button3 {
-			width: 100%;
+			position: fixed;
+			width: 25%;
+			right: 20%;
 			bottom: 8px;
 			font-size: 18px;
 		}
@@ -94,6 +96,10 @@
 
 		#titulo {
 			font-size: 290%;
+		}
+
+		span {
+			font-size: 40px;
 		}
   	</style>
 
@@ -151,29 +157,30 @@
 	</script>
 	{% load staticfiles %}
 	<section class="contenedor" ondragover="allowDrop(event)">
-  	<div class="row">
+	  	<div class="row">
 
-    <div class="elemens" ondrop="drop(event)">
-      <h1 id="titulo" class="text-center">Elementos químicos</h1>
-			<img id="e1"class="F_Ex" src="{% static "alchemy/hidrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=H >
-			<img id="e2"class="F_Ex" src="{% static "alchemy/cloro.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Cl >
-			<img id="e3"class="F_Ex" src="{% static "alchemy/nitrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=N >
-			<img id="e4"class="F_Ex" src="{% static "alchemy/oxigeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=O >
-			<img id="e5"class="F_Ex" src="{% static "alchemy/sodio.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Na >
+		    <div class="elemens" ondrop="drop(event)">
+		      <h1 id="titulo" class="text-center">Elementos químicos</h1>
+		      	<div>
+					<img id="e1"class="F_Ex" src="{% static "alchemy/hidrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=H >
+					<img id="e2"class="F_Ex" src="{% static "alchemy/cloro.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Cl >
+					<img id="e3"class="F_Ex" src="{% static "alchemy/nitrogeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=N >
+					<img id="e4"class="F_Ex" src="{% static "alchemy/oxigeno.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=O >
+					<img id="e5"class="F_Ex" src="{% static "alchemy/sodio.png" %}" draggable="true" ondragstart="drag(event)" style="max-width:25%;" alt=Na >
+				</div>
 
-			<div>
-			<a id="Button1" href="../" class="btn btn-primary center-block">Ir al Inicio</a>
-			<a id="Button2" href="../almacen" class="btn btn-primary center-block">Ir al almacén</a>
-		</div>
-    </div>
-    <div class="mixspace" >
-		<div class="mspace" id="fuego" ondrop="dropExtra(event)" ondragover="allowDrop(event)">
-      		<h1 id="titulo" class="text-center">Área de trabajo</h1>
-			<button id="Button3" type="button" onClick="getChilds()" class="btn btn-primary center-block">Mezclar</button>
+					<a id="Button1" href="../" class="btn btn-primary center-block">Ir al Inicio</a>
+					<a id="Button2" href="../almacen" class="btn btn-primary center-block">Ir al almacén</a>
+		    </div>
+
+		    <div class="mixspace" >
+				<div class="mspace" id="fuego" ondrop="dropExtra(event)" ondragover="allowDrop(event)">
+		      		<h1 id="titulo" class="text-center">Área de trabajo</h1>
+					
+			  	</div>
+			  	<button id="Button3" type="button" onClick="getChilds()" class="btn btn-primary center-block">Mezclar</button>
+		    </div>
 	  </div>
-    </div>
-
-  </div>
 </section>
 
 <!-- Modal -->
@@ -182,10 +189,12 @@
     <div class="modal-content">
       <div class="modal-header">
 
-        <h4 class="modal-title text-center" id="myModalLabel">¡Has generado Agua! <br><b>O + H</b></h4>
+        <h3 class="text-center" id="myModalLabel">¡Felicidades!  <span>&#9786<span></h3>
+        
       </div>
       <div class="modal-body">
         <img src="{% static "alchemy/agua.png" %}" alt="" class="img img-responsive center-block" style="max-height:200px;">
+        <h4 class="text-center">Has creado agua usando <b>H + O</b></h4>
         <audio src="ta_da.mp3" type="audio/mpeg"></audio>
       </div>
       <div class="modal-footer">
@@ -201,10 +210,12 @@
     <div class="modal-content">
       <div class="modal-header">
 
-        <h4 class="modal-title text-center" id="myModalLabel">¡Has generado Aire! <br><b>N + O</b></h4>
+        <h3 class="modal-title text-center" id="myModalLabel">¡Felicidades!  <span>&#9786<span></h3>
+
       </div>
       <div class="modal-body">
         <img src="{% static "alchemy/aire.png" %}" alt="" class="img img-responsive center-block" style="max-height:200px;">
+        <h4 class="text-center">Has creado aire usando <b>O + N</b></h4>
         <audio src="ta_da.mp3" type="audio/mpeg"></audio>
       </div>
       <div class="modal-footer">
@@ -220,10 +231,12 @@
     <div class="modal-content">
       <div class="modal-header">
 
-        <h4 class="modal-title text-center" id="myModalLabel">¡Has generado Sal! <br><b>Cl + Na</b></h4>
+        <h3 class="modal-title text-center" id="myModalLabel">¡Felicidades!  <span>&#9786<span></h3>
+
       </div>
       <div class="modal-body">
         <img src="{% static "alchemy/sal.png" %}" alt="" class="img img-responsive center-block" style="max-height:200px;">
+        <h4 class="text-center">Has creado sal usando <b>Na + Cl</b></h4>
         <audio src="ta_da.mp3" type="audio/mpeg"></audio>
       </div>
       <div class="modal-footer">
@@ -239,7 +252,7 @@
     <div class="modal-content">
       <div class="modal-header">
 
-        <h4 class="modal-title" id="myModalLabel">¡Tu combinación no generó ningún compuesto conocido!</h4>
+        <h3 class="modal-title" id="myModalLabel">¡Tu combinación no generó ningún compuesto conocido! <span>&#9785</span></h3>
       </div>
       <div class="modal-body">
 				La combinación que realizaste no crea ningún compuesto conocido. <br>
